@@ -4,6 +4,7 @@ nav:
   - 主页: index.md
   - 实战:
     - 如何把几个省放在一起: group-maps.md
+    - 如果提取北京市的轮廓: dissolve-internal-borders.md
 
 docs_dir: book
 site_dir: docs
