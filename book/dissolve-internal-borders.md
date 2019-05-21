@@ -8,4 +8,4 @@
 1. 装 mapshaper，echarts-mapmaker ```npm install -g mapshaper echarts-mapmaker```
 1. 请从[这里](https://raw.githubusercontent.com/echarts-maps/echarts-china-cities-js/master/geojson/shape-with-internal-borders/beijing.geojson)下载北京的市区图。
 1. 然后运行```mapshaper beijing.geojson  -dissolve2 -o beijing-shape-only.geojson```
-1. 在打开 beijing-shape-only.geojson。
+1. 再打开 beijing-shape-only.geojson。

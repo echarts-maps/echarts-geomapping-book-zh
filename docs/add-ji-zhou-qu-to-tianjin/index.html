@@ -7,11 +7,11 @@
         
         
         
-        <link rel="shortcut icon" href="/img/favicon.ico">
-        <title>Echarts 地图</title>
-        <link href="/css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>如何给天津市补上蓟洲区 - Echarts 地图</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="/js/jquery-1.10.2.min.js" defer></script>
-        <script src="/js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/.">Echarts 地图</a>
+                    <a class="navbar-brand" href="..">Echarts 地图</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -47,18 +47,18 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="/.">主页</a>
+                                <a href="..">主页</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">实战 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="/dissolve-internal-borders/">如果提取北京市的轮廓</a>
+    <a href="../dissolve-internal-borders/">如果提取北京市的轮廓</a>
 </li>
                                     
-<li >
-    <a href="/add-ji-zhou-qu-to-tianjin/">如何给天津市补上蓟洲区</a>
+<li class="active">
+    <a href="./">如何给天津市补上蓟洲区</a>
 </li>
                                 </ul>
                             </li>
@@ -70,21 +70,58 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li >
+                                <a rel="next" href="../dissolve-internal-borders/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="disabled">
+                                <a rel="prev" >
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">如何给天津市补上蓟洲区</a></li>
+            <li><a href="#_2">简要操作顺序</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
 
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-      </div>
-    </div>
-
-
+<h1 id="_1">如何给天津市补上蓟洲区</h1>
+<p><a href="https://baike.baidu.com/item/蓟州区">蓟洲区</a>的前身是蓟县，2016年6月，成为天津市蓟州区。</p>
+<h2 id="_2">简要操作顺序</h2>
+<ol>
+<li>从这里下载<a href="https://raw.githubusercontent.com/echarts-maps/echarts-china-cities-js/2f9a518febbd59868f648ce08901d6993d6c0ba1/geojson/shape-with-internal-borders/tianjin.geojson">天津市区地图</a>并存为 tianjin.geojson</li>
+<li>
+<p>用浏览器打开 geojson.io，把下载的地图拽入浏览器。</p>
+<p><img alt="geojson" src="../image/tianjin-geojson.png" /></p>
+</li>
+<li>
+<p>按照前面百度百科的蓟洲区地图，在浏览器里开始画 Polygon</p>
+<p>千万记住最后一个点，必须是第一个起始点。
+<img alt="jizhouqu" src="../image/jizhouqu.png" /></p>
+</li>
+<li>
+<p>编辑完毕之后，新画的区留下了。辅助区消失了。请把右边的 geojson 给存成文件：jizhouqu.geojson</p>
+<p><img alt="jizhouqu-done" src="../image/jizhouqu-done.png" /></p>
+</li>
+<li>
+<p>这个时候就需要 echarts-mapmaker 了。</p>
+<p><code>$ npm install -g echarts-mapmaker
+$ merge tianjin.geojson jizhouqu.geojson
+$ ls merged_tianjin.geojson</code></p>
+</li>
+<li>
+<p><code>merged_tianjin.geojson</code> 就是最后制定好的新的天津市市区图</p>
+</li>
+</ol></div>
         </div>
 
         <footer class="col-md-12">
@@ -92,11 +129,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "/",
+            var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="/js/base.js" defer></script>
-        <script src="/search/main.js" defer></script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
