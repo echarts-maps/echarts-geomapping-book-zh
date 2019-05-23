@@ -1,4 +1,4 @@
-# 如何提取北京市的轮廓
+# 提取北京市的轮廓
 
 ![screenshot](image/beijing.png)
 

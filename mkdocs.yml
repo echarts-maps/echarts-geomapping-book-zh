@@ -2,9 +2,11 @@ site_name: Echarts 地图
 
 nav:
   - 主页: index.md
+  - 工具:
+    - geojson.io: geojson-io.md
   - 实战:
-    - 如果提取北京市的轮廓: dissolve-internal-borders.md
-    - 如何给天津市补上蓟洲区: add-ji-zhou-qu-to-tianjin.md
+    - 提取北京市的轮廓: dissolve-internal-borders.md
+    - 给天津市补上蓟洲区: add-ji-zhou-qu-to-tianjin.md
 
 docs_dir: book
 site_dir: docs
