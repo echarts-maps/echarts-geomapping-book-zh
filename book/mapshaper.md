@@ -14,8 +14,9 @@
 npm install -g mapshaper
 ```
 
-## 命令形式
+## 消除边界的命令形式
 
 ```
 mapshaper your_shape_with_internal_borders.geojson -dissolve2 -o your_shape_contoure.geojson
 ```
+

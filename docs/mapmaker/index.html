@@ -7,11 +7,11 @@
         
         
         
-        <link rel="shortcut icon" href="/img/favicon.ico">
-        <title>Echarts 地图</title>
-        <link href="/css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>地图工匠（mapmaker） - Echarts 地图</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="/js/jquery-1.10.2.min.js" defer></script>
-        <script src="/js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/.">Echarts 地图</a>
+                    <a class="navbar-brand" href="..">Echarts 地图</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -47,22 +47,22 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="/.">主页</a>
+                                <a href="..">主页</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="/geojson-io/">geojson 在线编辑器</a>
+    <a href="../geojson-io/">geojson 在线编辑器</a>
 </li>
                                     
 <li >
-    <a href="/mapshaper/">地图整形器（mapshaper）</a>
+    <a href="../mapshaper/">地图整形器（mapshaper）</a>
 </li>
                                     
-<li >
-    <a href="/mapmaker/">地图工匠（mapmaker）</a>
+<li class="active">
+    <a href="./">地图工匠（mapmaker）</a>
 </li>
                                 </ul>
                             </li>
@@ -71,11 +71,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="/dissolve-internal-borders/">提取北京市的轮廓</a>
+    <a href="../dissolve-internal-borders/">提取北京市的轮廓</a>
 </li>
                                     
 <li >
-    <a href="/add-ji-zhou-qu-to-tianjin/">给天津市补上蓟洲区</a>
+    <a href="../add-ji-zhou-qu-to-tianjin/">给天津市补上蓟洲区</a>
 </li>
                                 </ul>
                             </li>
@@ -87,21 +87,50 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li >
+                                <a rel="next" href="../mapshaper/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../dissolve-internal-borders/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#mapmaker">mapmaker</a></li>
+            <li><a href="#_1">简介</a></li>
+            <li><a href="#_2">主要功能</a></li>
+            <li><a href="#geojson_1">解压 geojson</a></li>
+            <li><a href="#_3">简单的地图编辑：合并，拆分</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
 
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-      </div>
-    </div>
-
-
+<h1 id="mapmaker">mapmaker</h1>
+<h2 id="_1">简介</h2>
+<p><a href="https://github.com/echarts-maps/echarts-mapmaker">echarts-mapmaker</a> 的前身是
+<a href="https://github.com/ecomfe/echarts-map-tool">echarts-map-tool</a>。mapmaker 是给 echarts 地图开发人员设计的命令，
+而 echarts-map-tool 是以网页形式存在的地图定制器。</p>
+<h2 id="_2">主要功能</h2>
+<h3 id="geojson">压缩 geojson</h3>
+<p>echarts 可以接受标准的 geojson 进行画图。同时 echarts 团队有自己独特的压缩格式，用万国码编码 geojson (UTF8 encoded geojson)。这种
+压缩方式是会一定丢失精度，但精度是可调的。这种编码现今只有 echarts 支持。类似的格式有<a href="https://github.com/topojson/topojson">Topojson</a>，
+由数据可视化的沙皇 <a href="https://github.com/mbostock">Mike Bostock</a> 创立的，并有一系列的衍生工具。二者虽然同时存在，但都想解决同一个
+问题：给标准 geojson 的文件减肥。在互联网时代，下载量越小，用户看到地图的时间越快，提升用户体验。
+<a href="https://github.com/echarts-maps/echarts-united-kingdom-js">举个例子</a>，标准的英国 2017 投票地图接近 188 MB，</p>
+<p>用 mapmaker 做万国码编码之后，地图的缩小到 9.9 MB, 缩小 20 倍。</p>
+<h2 id="geojson_1">解压 geojson</h2>
+<p>前面提到了， 用万国码编码 geojson 是 echarts 团队有自己独特的压缩格式。所以，需要得到标准的 geojson 的画，就需要 mapmaker 做解压。</p>
+<h2 id="_3">简单的地图编辑：合并，拆分</h2>
+<p>mapmaker 可以把一个独立的地图合并到另一个地图里。另外，有些地图有多个多边形，比如北京有很多区，朝阳区，海淀区等。mapmaker 可以把这样一个地图内部的区全部独立出来。</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -109,11 +138,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "/",
+            var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="/js/base.js" defer></script>
-        <script src="/search/main.js" defer></script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">

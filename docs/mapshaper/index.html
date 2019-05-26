@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>mapshaper - Echarts 地图</title>
+        <title>地图整形器（mapshaper） - Echarts 地图</title>
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -54,11 +54,15 @@
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../geojson-io/">geojson.io</a>
+    <a href="../geojson-io/">geojson 在线编辑器</a>
 </li>
                                     
 <li class="active">
-    <a href="./">mapshaper</a>
+    <a href="./">地图整形器（mapshaper）</a>
+</li>
+                                    
+<li >
+    <a href="../mapmaker/">地图工匠（mapmaker）</a>
 </li>
                                 </ul>
                             </li>
@@ -89,7 +93,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../dissolve-internal-borders/">
+                                <a rel="prev" href="../mapmaker/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -104,7 +108,7 @@
         <li class="main active"><a href="#mapshaper">mapshaper</a></li>
             <li><a href="#_1">简介</a></li>
             <li><a href="#_2">安装</a></li>
-            <li><a href="#_3">命令形式</a></li>
+            <li><a href="#_3">消除边界的命令形式</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -119,7 +123,7 @@
 <pre><code>npm install -g mapshaper
 </code></pre>
 
-<h2 id="_3">命令形式</h2>
+<h2 id="_3">消除边界的命令形式</h2>
 <pre><code>mapshaper your_shape_with_internal_borders.geojson -dissolve2 -o your_shape_contoure.geojson
 </code></pre></div>
         </div>
