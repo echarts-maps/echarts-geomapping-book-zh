@@ -28,3 +28,4 @@
 
 1. `merged_tianjin.geojson` 就是最后制定好的新的天津市市区图
 
+    ![merged-tianjin](image/merge-tianjin-geojson.png)
