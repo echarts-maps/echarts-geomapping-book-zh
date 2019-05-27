@@ -7,11 +7,11 @@
         
         
         
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>提取北京市的轮廓 - Echarts 地图</title>
-        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>瑞士在哪里？使用 natural earth 的地图 - Echarts 地图</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="..">Echarts 地图</a>
+                    <a class="navbar-brand" href="../..">Echarts 地图</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -47,26 +47,26 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="..">主页</a>
+                                <a href="../..">主页</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../geojson-io/">geojson 在线编辑器</a>
+    <a href="../../tools/geojson-io/">geojson 在线编辑器</a>
 </li>
                                     
 <li >
-    <a href="../mapshaper/">地图整形器（mapshaper）</a>
+    <a href="../../tools/mapshaper/">地图整形器（mapshaper）</a>
 </li>
                                     
 <li >
-    <a href="../mapmaker/">地图工匠（mapmaker）</a>
+    <a href="../../tools/mapmaker/">地图工匠（mapmaker）</a>
 </li>
                                     
 <li >
-    <a href="../gdal/">地理空间数据格式翻译家 (GDAL)</a>
+    <a href="../../tools/gdal/">地理空间数据格式翻译家 (GDAL)</a>
 </li>
                                 </ul>
                             </li>
@@ -74,16 +74,16 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">实战 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li class="active">
-    <a href="./">提取北京市的轮廓</a>
+<li >
+    <a href="../dissolve-internal-borders/">提取北京市的轮廓</a>
 </li>
                                     
 <li >
     <a href="../add-ji-zhou-qu-to-tianjin/">给天津市补上蓟洲区</a>
 </li>
                                     
-<li >
-    <a href="../switzerland/">瑞士在哪里？使用 natural earth 的地图</a>
+<li class="active">
+    <a href="./">瑞士在哪里？使用 natural earth 的地图</a>
 </li>
                                 </ul>
                             </li>
@@ -92,7 +92,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../add-switzerland.md">把瑞士加入 echarts-countries-js 里</a>
+    <a href="../../add-switzerland.md">把瑞士加入 echarts-countries-js 里</a>
 </li>
                                 </ul>
                             </li>
@@ -105,12 +105,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../gdal/">
+                                <a rel="next" href="../add-ji-zhou-qu-to-tianjin/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../add-ji-zhou-qu-to-tianjin/">
+                            <li class="disabled">
+                                <a rel="prev" >
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -122,21 +122,59 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">提取北京市的轮廓</a></li>
+        <li class="main active"><a href="#natural-earth">使用 natural earth 地图</a></li>
+            <li><a href="#natural-earth_1">什么是 natural earth 地图</a></li>
+            <li><a href="#natural-earth_2">如何用 natural earth 的数据做瑞士地图</a></li>
+            <li><a href="#echarts">在 echarts 里显示，还需做什么处理</a></li>
+            <li><a href="#_1">相关的外部文章</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="_1">提取北京市的轮廓</h1>
-<p><img alt="screenshot" src="../image/beijing.png" /></p>
-<p>现在，咱们就来看看怎么拿一个有<a href="https://github.com/echarts-maps/echarts-china-cities-js/blob/master/geojson/shape-with-internal-borders/beijing.geojson">内部区界的北京市地图</a>来做一个北京市轮廓：</p>
+<h1 id="natural-earth">使用 natural earth 地图</h1>
+<h2 id="natural-earth_1">什么是 natural earth 地图</h2>
+<h2 id="natural-earth_2">如何用 natural earth 的数据做瑞士地图</h2>
+<p>开始之前，请装好 <a href="tools/gdal.md">GDAL</a></p>
 <ol>
-<li>我们需要装：node.js。我推荐大家装 <a href="https://github.com/nvm-sh/nvm">nvm</a>，好处是可以随时转换 node.js 的版本。用得多了，你就知道它的好处了。</li>
-<li>装 mapshaper，echarts-mapmaker <code>npm install -g mapshaper echarts-mapmaker</code></li>
-<li>请从<a href="https://raw.githubusercontent.com/echarts-maps/echarts-china-cities-js/master/geojson/shape-with-internal-borders/beijing.geojson">这里</a>下载北京的市区图。</li>
-<li>然后运行<code>mapshaper beijing.geojson  -dissolve2 -o beijing-shape-only.geojson</code></li>
-<li>再打开 beijing-shape-only.geojson。</li>
-</ol></div>
+<li>
+<p>首先把地<a href="https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_1_states_provinces.zip">图包</a>下载下来。在<a href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/">这个下载页面</a>，选择 “Admin 1 - States, Provinces“ 。</p>
+<p>为什么呢？我需要内部的省份边界。你可以选择 "Admin 0 - Boundary lines"</p>
+</li>
+<li>
+<p>下载后，请解压缩。</p>
+</li>
+<li>
+<p>使用 <code>og2ogr</code> 命令，开始提取瑞士的图</p>
+<p><code>ogr2ogr -f GeoJSON -where "ADM0_A3 in ('CHE')" switzerland.geojson ne_10m_admin_1_states_provinces.shp</code></p>
+</li>
+<li>
+<p>让我们打开 geojson.io, 先看看效果吧。</p>
+<p><img alt="switzerland preview" src="../../image/switzerland-preview.png" /></p>
+</li>
+</ol>
+<h2 id="echarts">在 echarts 里显示，还需做什么处理</h2>
+<ol>
+<li>
+<p>natural earth 的数据提供了一些多语言的地名。因为目前， echarts-maps 还仅仅支持
+中文，所以需要把名字的属性改一下。</p>
+<p><code>{ "type": "Feature", "properties": { "featurecla": "Admin-1 scale rank", "scalerank": 9, "adm1_code": "CHE-168", "diss_me": 168, "iso_3166_2": "CH-TI", "wikipedia": null, "iso_a2":
+"CH", "adm0_sr": 1, "name": "Ticino", "name_alt": "Tesino|Tessin", "name_local": null, "type": "Canton|Kanton|Chantun", "type_en": "Canton", "code_local": null, "code_hasc": "CH.TI"
+, "note": null, "hasc_maybe": null, "region": null, "region_cod": null, "provnum_ne": 15, "gadm_level": 1, "check_me": 20, "datarank": 7, "abbrev": null, "postal": "TI", "area_sqkm"
+: 0, "sameascity": -99, "labelrank": 9, "name_len": 6, "mapcolor9": 7, "mapcolor13": 3, "fips": "SZ20", "fips_alt": null, "woe_id": 2347102, "woe_label": "Canton of Ticino, CH, Swit
+zerland", "woe_name": "Ticino", "latitude": 46.3604, "longitude": 8.79019, "sov_a3": "CHE", "adm0_a3": "CHE", "adm0_label": 2, "admin": "Switzerland", "geonunit": "Switzerland", "gu
+_a3": "CHE", "gn_id": 2658370, "gn_name": "Cantone Ticino", "gns_id": -2554455, "gns_name": "Ticino, Cantone", "gn_level": 1, "gn_region": null, "gn_a1_code": "CH.TI", "region_sub": null, "sub_code": null, "gns_level": 1, "gns_lang": "swa", "gns_adm1": "SZ20", "gns_region": null, "min_label": 8.7, "max_label": 11.0, "min_zoom": 8.7, "wikidataid": "Q12724", "name_ar": "كانتون تيسينو", "name_bn": "তিকিনো", "name_de": "Kanton Tessin", "name_en": "Ticino", "name_es": "Tesino", "name_fr": "canton du Tessin", "name_el": "Τιτσίνο", "name_hi": "तिचीनो कैन्टन", "name_hu": "Ticino kanton", "name_id": "Kanton Ticino", "name_it": "canton Ticino", "name_ja": "ティチーノ州", "name_ko": "티치노 주", "name_nl": "Ticino", "name_pl":"Ticino", "name_pt": "Ticino", "name_ru": "Тичино", "name_sv": "Ticino", "name_tr": "Ticino", "name_vi": "Ticino", "name_zh": "提契諾州", "ne_id": 1159307671 }, "geometry": {...</code></p>
+</li>
+<li>
+<p>echarts-mapmaker 有一个 <code>property</code> 的命令：</p>
+<p><code>property -r name_zh,name switzerland.geojson</code></p>
+</li>
+<li>
+<p>再<a href="https://github.com/echarts-maps/echarts-countries-js/blob/master/geojson/shape-with-internal-borders/switzerland.geojson">查看</a>的时候，它的名字就是中文的了。</p>
+<p><img alt="switzerland" src="../../image/switzerland.png" /></p>
+</li>
+</ol>
+<h2 id="_1">相关的外部文章</h2>
+<p><a href="https://bost.ocks.org/mike/map/">让我们做英国地图</a></p></div>
         </div>
 
         <footer class="col-md-12">
@@ -144,11 +182,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "..",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../js/base.js" defer></script>
-        <script src="../search/main.js" defer></script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
