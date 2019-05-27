@@ -6,9 +6,13 @@ nav:
     - geojson 在线编辑器: geojson-io.md
     - 地图整形器（mapshaper）: mapshaper.md
     - 地图工匠（mapmaker）: mapmaker.md
+    - 地理空间数据格式翻译家 (GDAL): gdal.md
   - 实战:
     - 提取北京市的轮廓: dissolve-internal-borders.md
     - 给天津市补上蓟洲区: add-ji-zhou-qu-to-tianjin.md
+    - 瑞士在哪里？使用 natural earth 的地图: switzerland.md
+  - 维护地图:
+    - 把瑞士加入 echarts-countries-js 里: add-switzerland.md
 
 docs_dir: book
 site_dir: docs
