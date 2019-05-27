@@ -4,7 +4,7 @@
 
 ## 如何用 natural earth 的数据做瑞士地图
 
-开始之前，请装好 [GDAL](gdal.md)
+开始之前，请装好 [GDAL](tools/gdal.md)
 
 1. 首先把地[图包](https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_1_states_provinces.zip)下载下来。在[这个下载页面](https://www.naturalearthdata.com/downloads/10m-cultural-vectors/)，选择 “Admin 1 - States, Provinces“ 。
 
