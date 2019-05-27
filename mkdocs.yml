@@ -11,8 +11,6 @@ nav:
     - 提取北京市的轮廓: howtos/dissolve-internal-borders.md
     - 给天津市补上蓟洲区: howtos/add-ji-zhou-qu-to-tianjin.md
     - 瑞士在哪里？使用 natural earth 的地图: howtos/switzerland.md
-  - 维护地图:
-    - 把瑞士加入 echarts-countries-js 里: add-switzerland.md
 
 docs_dir: book
 site_dir: docs
