@@ -8,9 +8,9 @@ nav:
     - 地图工匠（mapmaker）: tools/mapmaker.md
     - 地理空间数据格式翻译家 (GDAL): tools/gdal.md
   - 实战:
-    - 提取北京市的轮廓: dissolve-internal-borders.md
-    - 给天津市补上蓟洲区: add-ji-zhou-qu-to-tianjin.md
-    - 瑞士在哪里？使用 natural earth 的地图: switzerland.md
+    - 提取北京市的轮廓: howtos/dissolve-internal-borders.md
+    - 给天津市补上蓟洲区: howtos/add-ji-zhou-qu-to-tianjin.md
+    - 瑞士在哪里？使用 natural earth 的地图: howtos/switzerland.md
   - 维护地图:
     - 把瑞士加入 echarts-countries-js 里: add-switzerland.md
 

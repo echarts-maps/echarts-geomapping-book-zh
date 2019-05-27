@@ -20,7 +20,7 @@
 
 1. 让我们打开 geojson.io, 先看看效果吧。
 
-    ![switzerland preview](image/switzerland-preview.png)
+    ![switzerland preview](../image/switzerland-preview.png)
 
 ## 在 echarts 里显示，还需做什么处理
 
@@ -45,7 +45,7 @@ _a3": "CHE", "gn_id": 2658370, "gn_name": "Cantone Ticino", "gns_id": -2554455, 
 
 1. 再[查看](https://github.com/echarts-maps/echarts-countries-js/blob/master/geojson/shape-with-internal-borders/switzerland.geojson)的时候，它的名字就是中文的了。
 
-    ![switzerland](image/switzerland.png)
+    ![switzerland](../image/switzerland.png)
 
 ## 相关的外部文章
 

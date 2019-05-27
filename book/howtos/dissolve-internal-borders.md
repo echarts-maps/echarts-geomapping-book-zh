@@ -1,6 +1,6 @@
 # 提取北京市的轮廓
 
-![screenshot](image/beijing.png)
+![screenshot](../image/beijing.png)
 
 现在，咱们就来看看怎么拿一个有[内部区界的北京市地图](https://github.com/echarts-maps/echarts-china-cities-js/blob/master/geojson/shape-with-internal-borders/beijing.geojson)来做一个北京市轮廓：
 
