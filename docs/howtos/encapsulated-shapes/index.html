@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>地理空间数据格式翻译家 (GDAL) - 给 Echarts 地图</title>
+        <title>给和田地区镶上昆玉市 - 给 Echarts 地图</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -49,45 +49,45 @@
                             <li >
                                 <a href="../..">主页</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../geojson-io/">geojson 在线编辑器</a>
+    <a href="../../tools/geojson-io/">geojson 在线编辑器</a>
 </li>
                                     
 <li >
-    <a href="../mapshaper/">地图整形器（mapshaper）</a>
+    <a href="../../tools/mapshaper/">地图整形器（mapshaper）</a>
 </li>
                                     
 <li >
-    <a href="../mapmaker/">地图工匠（mapmaker）</a>
+    <a href="../../tools/mapmaker/">地图工匠（mapmaker）</a>
 </li>
                                     
-<li class="active">
-    <a href="./">地理空间数据格式翻译家 (GDAL)</a>
+<li >
+    <a href="../../tools/gdal/">地理空间数据格式翻译家 (GDAL)</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">实战 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../howtos/dissolve-internal-borders/">提取北京市的轮廓</a>
+    <a href="../dissolve-internal-borders/">提取北京市的轮廓</a>
 </li>
                                     
 <li >
-    <a href="../../howtos/add-ji-zhou-qu-to-tianjin/">给天津市补上蓟洲区</a>
+    <a href="../add-ji-zhou-qu-to-tianjin/">给天津市补上蓟洲区</a>
 </li>
                                     
 <li >
-    <a href="../../howtos/switzerland/">瑞士在哪里？使用 natural earth 的地图</a>
+    <a href="../switzerland/">瑞士在哪里？使用 natural earth 的地图</a>
 </li>
                                     
-<li >
-    <a href="../../howtos/encapsulated-shapes/">给和田地区镶上昆玉市</a>
+<li class="active">
+    <a href="./">给和田地区镶上昆玉市</a>
 </li>
                                 </ul>
                             </li>
@@ -100,12 +100,12 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../mapmaker/">
+                                <a rel="next" href="../switzerland/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../../howtos/dissolve-internal-borders/">
+                            <li class="disabled">
+                                <a rel="prev" >
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -117,16 +117,45 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#gdal">GDAL</a></li>
-            <li><a href="#_1">安装</a></li>
+        <li class="main active"><a href="#_1">给和田地区镶上昆玉市</a></li>
+            <li><a href="#_2">地理常识</a></li>
+            <li><a href="#_3">小技术挑战</a></li>
+            <li><a href="#geojson">geojson 的解决方案</a></li>
+            <li><a href="#_4">具体细节</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="gdal">GDAL</h1>
-<p>GADAL 在地理地图数据格式处理方面有许多工具。ogrogr 是 echarts 常用的工具。</p>
-<h2 id="_1">安装</h2>
-<pre><code>brew install gdal
+<h1 id="_1">给和田地区镶上昆玉市</h1>
+<h2 id="_2">地理常识</h2>
+<p>昆玉市是在2016年中国国务院批准成立的，所以<a href="https://github.com/pyecharts/jupyter-echarts/issues/10">新疆地图</a>需要更新。</p>
+<h2 id="_3">小技术挑战</h2>
+<p>因为和田地区包围了昆玉市，所以用<a href="add-ji-zhou-qu-to-tianjin">给天津市补上蓟洲区</a>的方式行不通的。怎么办？</p>
+<h2 id="geojson">geojson 的解决方案</h2>
+<p>geojson 的 "MultiPolygon" 支持挖洞。</p>
+<pre><code>{
+  &quot;type&quot;: &quot;MultiPolygon&quot;,
+  &quot;coordinates&quot;: [
+    [
+      {polygon},
+      {hole},
+      {hole},
+      {hole}
+    ]
+  ]
+}
+</code></pre>
+
+<p>解决方案就是把和田地区的 geojson 把昆玉市作为一个洞挖出去，这样用<a href="add-ji-zhou-qu-to-tianjin">给天津市补上蓟洲区</a>的方式就行得通了。</p>
+<h2 id="_4">具体细节</h2>
+<ol>
+<li>先用 geojson.io 把昆玉市画出来</li>
+<li>把昆玉市和新疆地图合起来</li>
+<li>再给原有的和田地区挖个洞</li>
+</ol>
+<pre><code>var maker = require(&quot;echarts-mapmaker/src/maker&quot;);
+
+maker.cut('merged_xinjiang.json', '和田地区', '昆玉市');
 </code></pre></div>
         </div>
 

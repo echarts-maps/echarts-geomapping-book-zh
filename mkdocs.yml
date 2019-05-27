@@ -1,4 +1,4 @@
-site_name: Echarts 地图
+site_name: 给 Echarts 地图
 
 nav:
   - 主页: index.md
@@ -11,6 +11,7 @@ nav:
     - 提取北京市的轮廓: howtos/dissolve-internal-borders.md
     - 给天津市补上蓟洲区: howtos/add-ji-zhou-qu-to-tianjin.md
     - 瑞士在哪里？使用 natural earth 的地图: howtos/switzerland.md
+    - 给和田地区镶上昆玉市: howtos/encapsulated-shapes.md
 
 docs_dir: book
 site_dir: docs
