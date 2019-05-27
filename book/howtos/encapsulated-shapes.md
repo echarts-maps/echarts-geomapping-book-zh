@@ -39,3 +39,7 @@ var maker = require("echarts-mapmaker/src/maker");
 
 maker.cut('merged_xinjiang.json', '和田地区', '昆玉市');
 ```
+
+### 参考
+
+[echarts-china-provinces-js 的处理细节](https://github.com/echarts-maps/echarts-china-provinces-js/blob/master/build/tasks/xinjiang.js)
