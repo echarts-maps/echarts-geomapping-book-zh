@@ -12,6 +12,7 @@ nav:
     - 给天津市补上蓟洲区: howtos/add-ji-zhou-qu-to-tianjin.md
     - 瑞士在哪里？使用 natural earth 的地图: howtos/switzerland.md
     - 给和田地区镶上昆玉市: howtos/encapsulated-shapes.md
+    - 县级地图是从哪里来的: howtos/split-geojson.md
 
 docs_dir: book
 site_dir: docs

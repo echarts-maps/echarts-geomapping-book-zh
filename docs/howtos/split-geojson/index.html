@@ -7,11 +7,11 @@
         
         
         
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>如果创建区域地图 - 给 Echarts 做地图</title>
-        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>县级地图是从哪里来的 - 给 Echarts 做地图</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="..">给 Echarts 做地图</a>
+                    <a class="navbar-brand" href="../..">给 Echarts 做地图</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -47,51 +47,51 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="..">主页</a>
+                                <a href="../..">主页</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../tools/geojson-io/">geojson 在线编辑器</a>
+    <a href="../../tools/geojson-io/">geojson 在线编辑器</a>
 </li>
                                     
 <li >
-    <a href="../tools/mapshaper/">地图整形器（mapshaper）</a>
+    <a href="../../tools/mapshaper/">地图整形器（mapshaper）</a>
 </li>
                                     
 <li >
-    <a href="../tools/mapmaker/">地图工匠（mapmaker）</a>
+    <a href="../../tools/mapmaker/">地图工匠（mapmaker）</a>
 </li>
                                     
 <li >
-    <a href="../tools/gdal/">地理空间数据格式翻译家 (GDAL)</a>
+    <a href="../../tools/gdal/">地理空间数据格式翻译家 (GDAL)</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">实战 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../howtos/dissolve-internal-borders/">提取北京市的轮廓</a>
+    <a href="../dissolve-internal-borders/">提取北京市的轮廓</a>
 </li>
                                     
 <li >
-    <a href="../howtos/add-ji-zhou-qu-to-tianjin/">给天津市补上蓟洲区</a>
+    <a href="../add-ji-zhou-qu-to-tianjin/">给天津市补上蓟洲区</a>
 </li>
                                     
 <li >
-    <a href="../howtos/switzerland/">瑞士在哪里？使用 natural earth 的地图</a>
+    <a href="../switzerland/">瑞士在哪里？使用 natural earth 的地图</a>
 </li>
                                     
 <li >
-    <a href="../howtos/encapsulated-shapes/">给和田地区镶上昆玉市</a>
+    <a href="../encapsulated-shapes/">给和田地区镶上昆玉市</a>
 </li>
                                     
-<li >
-    <a href="../howtos/split-geojson/">县级地图是从哪里来的</a>
+<li class="active">
+    <a href="./">县级地图是从哪里来的</a>
 </li>
                                 </ul>
                             </li>
@@ -103,6 +103,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li >
+                                <a rel="next" href="../encapsulated-shapes/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="disabled">
+                                <a rel="prev" >
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -111,13 +121,41 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">如果创建区域地图</a></li>
+        <li class="main active"><a href="#_1">县级地图是从哪里来的</a></li>
+            <li><a href="#_2">理论</a></li>
+            <li><a href="#_3">实际操作</a></li>
+            <li><a href="#_4">后记</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="_1">如果创建区域地图</h1>
-<p>在画中国七大区的时候，各区内部的省界需要抹掉。而且，有时候，拿一个大城市的地图，内部是有区界的，而需要无内部区界，也需要这里的技巧。</p></div>
+<h1 id="_1">县级地图是从哪里来的</h1>
+<p>简单地说，县级地图大多是从城市地图拆分而来。拿北京做例子，可以把以下的地图</p>
+<p><img alt="beijing" src="../../image/beijing-shape.png" /></p>
+<p>拆分成以下</p>
+<p><img alt="beijing" src="../../image/beijing-districts.png" /></p>
+<h2 id="_2">理论</h2>
+<p>geojson，顾名思义，就是还有地理信息的 json (javascript object notation). 我们可以
+用标准的 json 编辑器把 geojson 文件打开。以北京为例，把<a href="">北京</a>地图文件拽到 json
+编辑器（比如 <a href="https://jsoneditoronline.org">json editor online</a>）里.</p>
+<p><img alt="beijing-geojson" src="../../image/beijing-geojson.png" /></p>
+<p>你会发现，她由 16 个形状组成的。比如第一个叫“东城区”。如果你装了 node.js 的话，我们
+可以继续看看所有 16 个区的名字：</p>
+<p><img alt="beijing-geojson-inspection" src="../../image/beijing-node-inspection.png" /></p>
+<h2 id="_3">实际操作</h2>
+<p>既然知道是怎么回事了，拆分就比较简单明了了。用 echarts-mapmaker 的 split 命令：</p>
+<pre><code>$ split geojson/shape-with-internal-borders/beijing.json
+$ ls
+东城区.geojson     怀柔区.geojson     通州区.geojson
+丰台区.geojson     房山区.geojson     顺义区.geojson
+大兴区.geojson     昌平区.geojson     石景山区.geojson
+密云区.geojson     朝阳区.geojson     门头沟区.geojson
+平谷区.geojson     海淀区.geojson
+延庆区.geojson     西城区.geojson
+</code></pre>
+
+<h2 id="_4">后记</h2>
+<p><a href="https://echarts-maps.github.io/echarts-china-counties-js/pages/index.html">2882 个县，岛，区的地图</a>就是这么得来的。</p></div>
         </div>
 
         <footer class="col-md-12">
@@ -125,11 +163,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "..",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../js/base.js" defer></script>
-        <script src="../search/main.js" defer></script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
