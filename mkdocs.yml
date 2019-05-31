@@ -1,4 +1,7 @@
 site_name: 给 Echarts 做地图
+repo_url: https://github.com/echarts-maps/echarts-geomapping-book-zh
+edit_uri: edit/master/book/
+
 
 nav:
   - 主页: index.md
