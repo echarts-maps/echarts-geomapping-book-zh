@@ -7,11 +7,11 @@
         
         
         
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>如果创建区域地图 - 给 Echarts 做地图</title>
-        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>制作华北平原 - 给 Echarts 做地图</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="..">给 Echarts 做地图</a>
+                    <a class="navbar-brand" href="../..">给 Echarts 做地图</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -47,43 +47,47 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="..">主页</a>
+                                <a href="../..">主页</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../tools/geojson-io/">geojson 在线编辑器</a>
+    <a href="../../tools/geojson-io/">geojson 在线编辑器</a>
 </li>
                                     
 <li >
-    <a href="../tools/mapshaper/">地图整形器（mapshaper）</a>
+    <a href="../../tools/mapshaper/">地图整形器（mapshaper）</a>
 </li>
                                     
 <li >
-    <a href="../tools/mapmaker/">地图工匠（mapmaker）</a>
+    <a href="../../tools/mapmaker/">地图工匠（mapmaker）</a>
 </li>
                                     
 <li >
-    <a href="../tools/gdal/">地理空间数据格式翻译家 (GDAL)</a>
+    <a href="../../tools/gdal/">地理空间数据格式翻译家 (GDAL)</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">简易制图 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../howtos/dissolve-internal-borders/">提取北京市的轮廓</a>
+    <a href="../dissolve-internal-borders/">提取北京市的轮廓</a>
 </li>
                                     
 <li >
-    <a href="../howtos/split-geojson/">县级地图是从哪里来的</a>
+    <a href="../split-geojson/">县级地图是从哪里来的</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">制作华北平原</a>
 </li>
                                     
 <li >
-    <a href="../howtos/encapsulated-shapes/">给和田地区镶上昆玉市</a>
+    <a href="../encapsulated-shapes/">给和田地区镶上昆玉市</a>
 </li>
                                 </ul>
                             </li>
@@ -92,11 +96,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../howtos/add-ji-zhou-qu-to-tianjin/">给天津市补上蓟洲区</a>
+    <a href="../add-ji-zhou-qu-to-tianjin/">给天津市补上蓟洲区</a>
 </li>
                                     
 <li >
-    <a href="../howtos/switzerland/">瑞士在哪里？使用 natural earth 的地图</a>
+    <a href="../switzerland/">瑞士在哪里？使用 natural earth 的地图</a>
 </li>
                                 </ul>
                             </li>
@@ -108,8 +112,18 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li >
+                                <a rel="next" href="../split-geojson/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../encapsulated-shapes/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                             <li>
-                                <a href="https://github.com/echarts-maps/echarts-geomapping-book-zh/edit/master/book/advanced-01.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/echarts-maps/echarts-geomapping-book-zh/edit/master/book/howtos/split-and-merge.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -119,13 +133,73 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#_1">如果创建区域地图</a></li>
+        <li class="main active"><a href="#_1">制作华北平原</a></li>
+            <li><a href="#_2">开篇</a></li>
+            <li><a href="#_3">理论</a></li>
+            <li><a href="#_4">简单操作</a></li>
+            <li><a href="#_5">如何去掉内部边界呢</a></li>
+            <li><a href="#_6">家庭作业</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="_1">如果创建区域地图</h1>
-<p>在画中国七大区的时候，各区内部的省界需要抹掉。而且，有时候，拿一个大城市的地图，内部是有区界的，而需要无内部区界，也需要这里的技巧。</p></div>
+<h1 id="_1">制作华北平原</h1>
+<h2 id="_2">开篇</h2>
+<p>想知道 <a href="https://echarts-maps.github.io/echarts-china-misc-js/preview.html">中国七大区</a>
+如何制作吗？这一篇讲解其中的技术细节，让大家轻松制作任意合集。</p>
+<p><img alt="seven areas" src="../../image/seven-areas.png" /></p>
+<h2 id="_3">理论</h2>
+<p>用 <a href="../tools/mapmaker">echarts-mapmaker</a> 和 echarts 现有的地图资源，制作华北平原是非常简单的事情。</p>
+<p>如何呢？<code>echarts:map/json/china.json</code> 提供全国省份的题图。我们需要做的
+就是把各个省份拆开，然后把华北平原的省份合起来。</p>
+<h2 id="_4">简单操作</h2>
+<ol>
+<li>git clone https://github.com/apache/incubator-echarts。千万不要<a href="https://github.com/apache/incubator-echarts/issues/7522">下载</a></li>
+<li>把 incubator-echarts/map/json/china.json 拷贝到当前工作目录。</li>
+<li>
+<p>拆分 <code>china.json</code>， 以得到所有独立的省份。</p>
+<p><code>$ split china.json
+$ ls
+china.json          吉林.geojson      山东.geojson      江苏.geojson      海南.geojson      福建.geojson      陕西.geojson
+上海.geojson      四川.geojson      山西.geojson      江西.geojson      湖北.geojson      西藏.geojson      青海.geojson
+云南.geojson      天津.geojson      广东.geojson      河北.geojson      湖南.geojson      贵州.geojson      香港.geojson
+北京.geojson      宁夏.geojson      广西.geojson      河南.geojson      澳门.geojson      辽宁.geojson      内蒙古.geojson
+台湾.geojson      安徽.geojson      新疆.geojson      浙江.geojson      甘肃.geojson      重庆.geojson      黑龙江.geojson</code></p>
+<p>好了，现在都拆分开了。</p>
+</li>
+<li>
+<p>合并。还记得华北包括哪些省份吗？他们分别是：河北，内蒙古，山西，北京，天津。</p>
+<p><code>$ merge 河北.geojson 内蒙古.geojson 
+$ merge merged_河北.geojson 山西.geojson 
+$ merge merged_merged_河北.geojson 北京.geojson 
+$ merge merged_merged_merged_河北.geojson 天津.geojson 
+$ mv merged_merged_merged_merged_河北.geojson 华北.geojson</code></p>
+<p>怎么会有这么多 'merged_' ？<code>merge</code> 工具自动加一个前缀，运行多次，就有这么多了。有改进意见的话，可以告诉我。</p>
+</li>
+<li>
+<p>最后让我们来看看华北平原吧。</p>
+<p>请注意，我们现在得到的 华北.geojson 是用万国码编码过的，其他工具是打不开的。怎么办？</p>
+<p><code>decode 华北.geojson huabei.geojson</code></p>
+<p>然后打开 <a href="http://geojson.io">geojson.io</a>，看到华北平原了吗？</p>
+<p><img alt="华北" src="../../image/hua-bei.png" /></p>
+</li>
+</ol>
+<h2 id="_5">如何去掉内部边界呢</h2>
+<ol>
+<li>记住，我们先要解码。如果还没有这么做的话，请参看前面的的命令。</li>
+<li>
+<p>用地图整形器抹掉内部边界</p>
+<p><code>mapshaper huabei.geojson -dissolve2 -o huabei-shape-only.geojson</code>
+1. 看看结果？</p>
+<p><img alt="华北轮廓" src="../../image/hua-bei-contour.png" /></p>
+</li>
+</ol>
+<h2 id="_6">家庭作业</h2>
+<ol>
+<li>参照<a href="../add-ji-zhou-qu-to-tianjin/">前面</a>，把华北地图做成一个 js 的版本。</li>
+<li>做一个华中地图。</li>
+<li>再难一点，做一个中国七大区的地图。</li>
+</ol></div>
         </div>
 
         <footer class="col-md-12">
@@ -133,11 +207,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "..",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../js/base.js" defer></script>
-        <script src="../search/main.js" defer></script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
