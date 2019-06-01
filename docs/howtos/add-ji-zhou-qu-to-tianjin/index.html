@@ -131,6 +131,7 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#_1">给天津市补上蓟洲区</a></li>
             <li><a href="#_2">简要操作顺序</a></li>
+            <li><a href="#js">做一个 js 文件</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -163,7 +164,13 @@ $ ls merged_tianjin.geojson</code></p>
 <p><code>merged_tianjin.geojson</code> 就是最后制定好的新的天津市市区图</p>
 <p><img alt="merged-tianjin" src="../../image/merge-tianjin-geojson.png" /></p>
 </li>
-</ol></div>
+</ol>
+<h2 id="js">做一个 js 文件</h2>
+<p>这个需要 <a href="../../tools/mapmaker/">echarts-mapmaker</a>.</p>
+<pre><code>$ makejs tianjin.geojson tianjin.js 天津
+</code></pre>
+
+<p>请注意，最后一个变量名<code>天津</code>，很重要。在 echarts 里调用的时候，就用 <code>天津</code>。</p></div>
         </div>
 
         <footer class="col-md-12">

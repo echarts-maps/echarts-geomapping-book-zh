@@ -131,9 +131,10 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#mapmaker">mapmaker</a></li>
             <li><a href="#_1">简介</a></li>
-            <li><a href="#_2">主要功能</a></li>
+            <li><a href="#_2">安装</a></li>
+            <li><a href="#_3">主要功能</a></li>
             <li><a href="#geojson_1">解压 geojson</a></li>
-            <li><a href="#_3">简单的地图编辑：合并，拆分</a></li>
+            <li><a href="#_4">简单的地图编辑：合并，拆分</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -143,7 +144,11 @@
 <p><a href="https://github.com/echarts-maps/echarts-mapmaker">echarts-mapmaker</a> 的前身是
 <a href="https://github.com/ecomfe/echarts-map-tool">echarts-map-tool</a>。mapmaker 是给 echarts 地图开发人员设计的命令，
 而 echarts-map-tool 是以网页形式存在的地图定制器。</p>
-<h2 id="_2">主要功能</h2>
+<h2 id="_2">安装</h2>
+<pre><code>npm install -g echarts-mapmaker
+</code></pre>
+
+<h2 id="_3">主要功能</h2>
 <h3 id="geojson">压缩 geojson</h3>
 <p>echarts 可以接受标准的 geojson 进行画图。同时 echarts 团队有自己独特的压缩格式，用万国码编码 geojson (UTF8 encoded geojson)。这种
 压缩方式是会一定丢失精度，但精度是可调的。这种编码现今只有 echarts 支持。类似的格式有<a href="https://github.com/topojson/topojson">Topojson</a>，
@@ -153,7 +158,7 @@
 <p>用 mapmaker 做万国码编码之后，地图的缩小到 9.9 MB, 缩小 20 倍。</p>
 <h2 id="geojson_1">解压 geojson</h2>
 <p>前面提到了， 用万国码编码 geojson 是 echarts 团队有自己独特的压缩格式。所以，需要得到标准的 geojson 的画，就需要 mapmaker 做解压。</p>
-<h2 id="_3">简单的地图编辑：合并，拆分</h2>
+<h2 id="_4">简单的地图编辑：合并，拆分</h2>
 <p>mapmaker 可以把一个独立的地图合并到另一个地图里。另外，有些地图有多个多边形，比如北京有很多区，朝阳区，海淀区等。mapmaker 可以把这样一个地图内部的区全部独立出来。</p></div>
         </div>
 

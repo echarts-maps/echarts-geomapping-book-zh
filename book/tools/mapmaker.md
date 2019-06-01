@@ -6,6 +6,13 @@
 [echarts-map-tool](https://github.com/ecomfe/echarts-map-tool)。mapmaker 是给 echarts 地图开发人员设计的命令，
 而 echarts-map-tool 是以网页形式存在的地图定制器。
 
+## 安装
+
+```
+npm install -g echarts-mapmaker
+```
+
+
 ## 主要功能
 
 ### 压缩 geojson

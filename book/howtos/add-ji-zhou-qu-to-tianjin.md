@@ -29,3 +29,13 @@
 1. `merged_tianjin.geojson` 就是最后制定好的新的天津市市区图
 
     ![merged-tianjin](../image/merge-tianjin-geojson.png)
+
+## 做一个 js 文件
+
+这个需要 [echarts-mapmaker](../tools/mapmaker.md).
+
+```
+$ makejs tianjin.geojson tianjin.js 天津
+```
+
+请注意，最后一个变量名`天津`，很重要。在 echarts 里调用的时候，就用 `天津`。
