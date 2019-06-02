@@ -11,7 +11,7 @@
 
 用 [echarts-mapmaker](../tools/mapmaker) 和 echarts 现有的地图资源，制作华北平原是非常简单的事情。
 
-如何呢？`echarts:map/json/china.json` 提供全国省份的题图。我们需要做的
+如何呢？`echarts:map/json/china.json` 提供全国省份的地图。我们需要做的
 就是把各个省份拆开，然后把华北平原的省份合起来。
 
 ## 简单操作

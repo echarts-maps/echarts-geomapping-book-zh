@@ -15,7 +15,7 @@ npm install -g echarts-mapmaker
 
 ## 主要功能
 
-### 压缩 geojson
+### 万国码编码 geojson
 
 echarts 可以接受标准的 geojson 进行画图。同时 echarts 团队有自己独特的压缩格式，用万国码编码 geojson (UTF8 encoded geojson)。这种
 压缩方式是会一定丢失精度，但精度是可调的。这种编码现今只有 echarts 支持。类似的格式有[Topojson](https://github.com/topojson/topojson)，
@@ -25,7 +25,7 @@ echarts 可以接受标准的 geojson 进行画图。同时 echarts 团队有自
 
 用 mapmaker 做万国码编码之后，地图的缩小到 9.9 MB, 缩小 20 倍。
 
-## 解压 geojson
+## 万国码编码解码 geojson
 
 前面提到了， 用万国码编码 geojson 是 echarts 团队有自己独特的压缩格式。所以，需要得到标准的 geojson 的画，就需要 mapmaker 做解压。
 
