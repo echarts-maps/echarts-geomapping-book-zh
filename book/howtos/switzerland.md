@@ -1,7 +1,5 @@
 # 使用 natural earth 地图
 
-## 什么是 natural earth 地图
-
 ## 如何用 natural earth 的数据做瑞士地图
 
 开始之前，请装好 [GDAL](../tools/gdal.md)

@@ -10,6 +10,7 @@ nav:
     - 地图整形器（mapshaper）: tools/mapshaper.md
     - 地图工匠（mapmaker）: tools/mapmaker.md
     - 地理空间数据格式翻译家 (GDAL): tools/gdal.md
+  - 地图资源: geojson-sources.md
   - 简易制图:
     - 提取北京市的轮廓: howtos/dissolve-internal-borders.md
     - 县级地图是从哪里来的: howtos/split-geojson.md
