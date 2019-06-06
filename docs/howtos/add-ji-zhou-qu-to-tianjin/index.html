@@ -68,13 +68,39 @@
 <li >
     <a href="../../tools/gdal/">地理空间数据格式翻译家 (GDAL)</a>
 </li>
+                                    
+<li >
+    <a href="../../geojson-sources/">地图资源</a>
+</li>
                                 </ul>
                             </li>
-                            <li >
-                                <a href="../../geojson-sources/">地图资源</a>
-                            </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">简易制图 <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">起步教程 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../tutorial/101/">画紫禁城</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/102/">与 pyecharts 接轨</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/103/">用 pyecharts 渲染</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/104/">在 jupyter notebook 展示紫禁城</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/105/">与他人分享紫禁城</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">实战 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
@@ -92,11 +118,6 @@
 <li >
     <a href="../encapsulated-shapes/">给和田地区镶上昆玉市</a>
 </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">制图进阶 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
                                     
 <li class="active">
     <a href="./">给天津市补上蓟洲区</a>
@@ -174,8 +195,9 @@ $ ls merged_tianjin.geojson</code></p>
 </ol>
 <h2 id="js">做一个 js 文件</h2>
 <p>这个需要 <a href="../../tools/mapmaker/">echarts-mapmaker</a>.</p>
-<pre><code>$ makejs tianjin.geojson tianjin.js 天津
-</code></pre>
+<div class="codehilite"><pre><span></span>$ makejs tianjin.geojson tianjin.js 天津
+</pre></div>
+
 
 <p>请注意，最后一个变量名<code>天津</code>，很重要。在 echarts 里调用的时候，就用 <code>天津</code>。</p></div>
         </div>

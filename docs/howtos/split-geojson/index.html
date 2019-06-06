@@ -68,13 +68,39 @@
 <li >
     <a href="../../tools/gdal/">地理空间数据格式翻译家 (GDAL)</a>
 </li>
+                                    
+<li >
+    <a href="../../geojson-sources/">地图资源</a>
+</li>
                                 </ul>
                             </li>
-                            <li >
-                                <a href="../../geojson-sources/">地图资源</a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">起步教程 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../tutorial/101/">画紫禁城</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/102/">与 pyecharts 接轨</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/103/">用 pyecharts 渲染</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/104/">在 jupyter notebook 展示紫禁城</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/105/">与他人分享紫禁城</a>
+</li>
+                                </ul>
                             </li>
                             <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">简易制图 <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">实战 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
@@ -92,11 +118,6 @@
 <li >
     <a href="../encapsulated-shapes/">给和田地区镶上昆玉市</a>
 </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">制图进阶 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
                                     
 <li >
     <a href="../add-ji-zhou-qu-to-tianjin/">给天津市补上蓟洲区</a>
@@ -159,7 +180,7 @@
 <p><img alt="beijing-geojson-inspection" src="../../image/beijing-node-inspection.png" /></p>
 <h2 id="_3">实际操作</h2>
 <p>既然知道是怎么回事了，拆分就比较简单明了了。用 echarts-mapmaker 的 split 命令：</p>
-<pre><code>$ split geojson/shape-with-internal-borders/beijing.json
+<div class="codehilite"><pre><span></span>$ split geojson/shape-with-internal-borders/beijing.json
 $ ls
 东城区.geojson     怀柔区.geojson     通州区.geojson
 丰台区.geojson     房山区.geojson     顺义区.geojson
@@ -167,7 +188,8 @@ $ ls
 密云区.geojson     朝阳区.geojson     门头沟区.geojson
 平谷区.geojson     海淀区.geojson
 延庆区.geojson     西城区.geojson
-</code></pre>
+</pre></div>
+
 
 <h2 id="_4">后记</h2>
 <p><a href="https://echarts-maps.github.io/echarts-china-counties-js/pages/index.html">2882 个县，岛，区的地图</a>就是这么得来的。</p></div>

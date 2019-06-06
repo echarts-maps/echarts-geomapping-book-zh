@@ -68,13 +68,39 @@
 <li >
     <a href="../../tools/gdal/">地理空间数据格式翻译家 (GDAL)</a>
 </li>
+                                    
+<li >
+    <a href="../../geojson-sources/">地图资源</a>
+</li>
                                 </ul>
                             </li>
-                            <li >
-                                <a href="../../geojson-sources/">地图资源</a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">起步教程 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../tutorial/101/">画紫禁城</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/102/">与 pyecharts 接轨</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/103/">用 pyecharts 渲染</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/104/">在 jupyter notebook 展示紫禁城</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/105/">与他人分享紫禁城</a>
+</li>
+                                </ul>
                             </li>
                             <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">简易制图 <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">实战 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
@@ -92,11 +118,6 @@
 <li class="active">
     <a href="./">给和田地区镶上昆玉市</a>
 </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">制图进阶 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
                                     
 <li >
     <a href="../add-ji-zhou-qu-to-tianjin/">给天津市补上蓟洲区</a>
@@ -152,18 +173,19 @@
 <p>因为和田地区包围了昆玉市，所以用<a href="add-ji-zhou-qu-to-tianjin">给天津市补上蓟洲区</a>的方式行不通的。怎么办？</p>
 <h2 id="geojson">geojson 的解决方案</h2>
 <p>geojson 的 "MultiPolygon" 支持挖洞。</p>
-<pre><code>{
-  &quot;type&quot;: &quot;MultiPolygon&quot;,
-  &quot;coordinates&quot;: [
-    [
-      {polygon},
-      {hole},
-      {hole},
-      {hole}
-    ]
-  ]
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">{</span>
+  <span class="ss">&quot;type&quot;</span><span class="p">:</span> <span class="ss">&quot;MultiPolygon&quot;</span><span class="p">,</span>
+  <span class="ss">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">[</span>
+      <span class="err">{</span><span class="n">polygon</span><span class="err">}</span><span class="p">,</span>
+      <span class="err">{</span><span class="n">hole</span><span class="err">}</span><span class="p">,</span>
+      <span class="err">{</span><span class="n">hole</span><span class="err">}</span><span class="p">,</span>
+      <span class="err">{</span><span class="n">hole</span><span class="err">}</span>
+    <span class="p">]</span>
+  <span class="p">]</span>
+<span class="err">}</span>
+</pre></div>
+
 
 <p>解决方案就是把和田地区的 geojson 把昆玉市作为一个洞挖出去，这样用<a href="add-ji-zhou-qu-to-tianjin">给天津市补上蓟洲区</a>的方式就行得通了。</p>
 <h2 id="_4">具体细节</h2>
@@ -172,10 +194,11 @@
 <li>把昆玉市和新疆地图合起来</li>
 <li>再给原有的和田地区挖个洞</li>
 </ol>
-<pre><code>var maker = require(&quot;echarts-mapmaker/src/maker&quot;);
+<div class="codehilite"><pre><span></span><span class="n">var</span> <span class="n">maker</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="ss">&quot;echarts-mapmaker/src/maker&quot;</span><span class="p">);</span>
 
-maker.cut('merged_xinjiang.json', '和田地区', '昆玉市');
-</code></pre>
+<span class="n">maker</span><span class="p">.</span><span class="n">cut</span><span class="p">(</span><span class="s1">&#39;merged_xinjiang.json&#39;</span><span class="p">,</span> <span class="s1">&#39;和田地区&#39;</span><span class="p">,</span> <span class="s1">&#39;昆玉市&#39;</span><span class="p">);</span>
+</pre></div>
+
 
 <h3 id="_5">参考</h3>
 <p><a href="https://github.com/echarts-maps/echarts-china-provinces-js/blob/master/build/tasks/xinjiang.js">echarts-china-provinces-js 的处理细节</a></p></div>

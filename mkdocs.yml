@@ -10,16 +10,24 @@ nav:
     - 地图整形器（mapshaper）: tools/mapshaper.md
     - 地图工匠（mapmaker）: tools/mapmaker.md
     - 地理空间数据格式翻译家 (GDAL): tools/gdal.md
-  - 地图资源: geojson-sources.md
-  - 简易制图:
+    - 地图资源: geojson-sources.md
+  - 起步教程:
+    - 画紫禁城: tutorial/101.md
+    - 与 pyecharts 接轨: tutorial/102.md
+    - 用 pyecharts 渲染: tutorial/103.md
+    - 在 jupyter notebook 展示紫禁城: tutorial/104.md
+    - 与他人分享紫禁城: tutorial/105.md
+  - 实战:
     - 提取北京市的轮廓: howtos/dissolve-internal-borders.md
     - 县级地图是从哪里来的: howtos/split-geojson.md
     - 制作华北平原: howtos/split-and-merge.md
     - 给和田地区镶上昆玉市: howtos/encapsulated-shapes.md
-  - 制图进阶:
     - 给天津市补上蓟洲区: howtos/add-ji-zhou-qu-to-tianjin.md
     - 瑞士在哪里？使用 natural earth 的地图: howtos/switzerland.md
 
 
 docs_dir: book
 site_dir: docs
+
+markdown_extensions:
+  - codehilite

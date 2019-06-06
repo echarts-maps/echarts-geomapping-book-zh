@@ -1,22 +1,10 @@
-# 如何使用 geojson.io 的多边形编辑器
+# Introduction to geojson.io
 
-## 画第一个多边形: 北京紫禁城
-
-1. 用浏览器打开 [geojson.io](http://geojson.io)
+No longer, it is required to have a GIS software in your computer. As long as
+you have a browser, you can draw a geo-shape.
 
     ![geojson](../image/geojson.png)
 
-1. 用鼠标把北京找到，并放大地图找到紫禁城
+`+`: for zoom in
 
-    ![geojson-2](../image/geojson-2.png)
-
-1. 点击多边形图标，开始画
-
-    ![geojson-3](../image/geojson-3.png)
-
-1. 最后，点击起点结束
-
-    ![geojson-4](../image/geojson-4.png)
-
-1. 到右边，全选，拷贝，存到本地。
-1. 然后呢，可以再打开一个新的 [geojson.io](http://geojson.io) 的窗口。把存下的文件，拽入右边的文字框。我们画的紫禁城又回来了。
+`-`: for zoom out

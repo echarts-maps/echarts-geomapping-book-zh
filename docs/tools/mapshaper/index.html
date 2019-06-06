@@ -68,13 +68,39 @@
 <li >
     <a href="../gdal/">地理空间数据格式翻译家 (GDAL)</a>
 </li>
+                                    
+<li >
+    <a href="../../geojson-sources/">地图资源</a>
+</li>
                                 </ul>
                             </li>
-                            <li >
-                                <a href="../../geojson-sources/">地图资源</a>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">起步教程 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../tutorial/101/">画紫禁城</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/102/">与 pyecharts 接轨</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/103/">用 pyecharts 渲染</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/104/">在 jupyter notebook 展示紫禁城</a>
+</li>
+                                    
+<li >
+    <a href="../../tutorial/105/">与他人分享紫禁城</a>
+</li>
+                                </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">简易制图 <b class="caret"></b></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">实战 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
@@ -92,11 +118,6 @@
 <li >
     <a href="../../howtos/encapsulated-shapes/">给和田地区镶上昆玉市</a>
 </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">制图进阶 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
                                     
 <li >
     <a href="../../howtos/add-ji-zhou-qu-to-tianjin/">给天津市补上蓟洲区</a>
@@ -151,12 +172,13 @@
 工具可以编辑 Shapefile, GeoJSON, TopoJSON, CSV 等地图格式。</p>
 <p>在 echarts 地图编辑的过程中，她主要用来消除地图内部边界线。</p>
 <h2 id="_2">安装</h2>
-<pre><code>npm install -g mapshaper
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="k">g</span> <span class="n">mapshaper</span>
+</pre></div>
+
 
 <h2 id="_3">消除边界的命令形式</h2>
-<pre><code>mapshaper your_shape_with_internal_borders.geojson -dissolve2 -o your_shape_contoure.geojson
-</code></pre></div>
+<div class="codehilite"><pre><span></span><span class="n">mapshaper</span> <span class="n">your_shape_with_internal_borders</span><span class="p">.</span><span class="n">geojson</span> <span class="o">-</span><span class="n">dissolve2</span> <span class="o">-</span><span class="n">o</span> <span class="n">your_shape_contoure</span><span class="p">.</span><span class="n">geojson</span>
+</pre></div></div>
         </div>
 
         <footer class="col-md-12">

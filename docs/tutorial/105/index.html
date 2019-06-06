@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>地理空间数据格式翻译家 (GDAL) - 给 Echarts 做地图</title>
+        <title>与他人分享紫禁城 - 给 Echarts 做地图</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -49,24 +49,24 @@
                             <li >
                                 <a href="../..">主页</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../geojson-io/">geojson 在线编辑器</a>
+    <a href="../../tools/geojson-io/">geojson 在线编辑器</a>
 </li>
                                     
 <li >
-    <a href="../mapshaper/">地图整形器（mapshaper）</a>
+    <a href="../../tools/mapshaper/">地图整形器（mapshaper）</a>
 </li>
                                     
 <li >
-    <a href="../mapmaker/">地图工匠（mapmaker）</a>
+    <a href="../../tools/mapmaker/">地图工匠（mapmaker）</a>
 </li>
                                     
-<li class="active">
-    <a href="./">地理空间数据格式翻译家 (GDAL)</a>
+<li >
+    <a href="../../tools/gdal/">地理空间数据格式翻译家 (GDAL)</a>
 </li>
                                     
 <li >
@@ -74,28 +74,28 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">起步教程 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../tutorial/101/">画紫禁城</a>
+    <a href="../101/">画紫禁城</a>
 </li>
                                     
 <li >
-    <a href="../../tutorial/102/">与 pyecharts 接轨</a>
+    <a href="../102/">与 pyecharts 接轨</a>
 </li>
                                     
 <li >
-    <a href="../../tutorial/103/">用 pyecharts 渲染</a>
+    <a href="../103/">用 pyecharts 渲染</a>
 </li>
                                     
 <li >
-    <a href="../../tutorial/104/">在 jupyter notebook 展示紫禁城</a>
+    <a href="../104/">在 jupyter notebook 展示紫禁城</a>
 </li>
                                     
-<li >
-    <a href="../../tutorial/105/">与他人分享紫禁城</a>
+<li class="active">
+    <a href="./">与他人分享紫禁城</a>
 </li>
                                 </ul>
                             </li>
@@ -137,17 +137,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../mapmaker/">
+                                <a rel="next" href="../104/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../../geojson-sources/">
+                                <a rel="prev" href="../../howtos/dissolve-internal-borders/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/echarts-maps/echarts-geomapping-book-zh/edit/master/book/tools/gdal.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/echarts-maps/echarts-geomapping-book-zh/edit/master/book/tutorial/105.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -157,17 +157,76 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#gdal">GDAL</a></li>
-            <li><a href="#_1">安装</a></li>
+        <li class="main active"><a href="#_1">与他人分享</a></li>
+            <li><a href="#github">挂在 github 上</a></li>
+            <li><a href="#_4">其他的分享途径</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="gdal">GDAL</h1>
-<p><a href="https://gdal.org/">GADAL</a> 在地理地图数据格式处理方面有许多工具。ogrogr 是 echarts 常用的工具。</p>
-<h2 id="_1">安装</h2>
-<div class="codehilite"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">gdal</span>
-</pre></div></div>
+<h1 id="_1">与他人分享</h1>
+<p>我们已经可以用 pyecharts, jupyter-noteook 把紫禁城画出来了。可以在与
+别人分享的时候，我们不能用 127.0.0.1，而是需要一个公共服务器。</p>
+<h2 id="github">挂在 github 上</h2>
+<p>echart-maps 里的所有 js 文件其实都是关在 github 上的。</p>
+<ol>
+<li>
+<p>先在本地创建一个 git 项目.</p>
+<p><code>$ git init</code></p>
+<p><code>$ git add .</code></p>
+<p><code>$ git commit -am "initial comment"</code></p>
+</li>
+<li>
+<p>然后把这个项目放到 github 里</p>
+</li>
+<li>
+<p>在 github 的项目设定列开启 github pages：</p>
+<p><img alt="settings-page" src="../../image/tutorial/settings-page.png" /></p>
+</li>
+<li>
+<p>这个截屏告诉你是怎么做的：</p>
+<p><img alt="github-pages" src="../../image/tutorial/github-pages.png" /></p>
+</li>
+<li>
+<p>稍等一下，你的 github pages 就可以用了。</p>
+</li>
+</ol>
+<h3 id="_2">然后更新所有的代码：</h3>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pyecharts</span> <span class="kn">import</span> <span class="n">options</span> <span class="k">as</span> <span class="n">opts</span>
+<span class="kn">from</span> <span class="nn">pyecharts.charts</span> <span class="kn">import</span> <span class="n">Geo</span>
+<span class="kn">from</span> <span class="nn">pyecharts.datasets</span> <span class="kn">import</span> <span class="n">register_url</span>
+
+<span class="n">register_url</span><span class="p">(</span><span class="s2">&quot;https://echarts-maps.github.io/The-Forbidden-City-Demo&quot;</span><span class="p">)</span> <span class="c1"># &lt;--</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="p">(</span>
+       <span class="n">Geo</span><span class="p">()</span>
+        <span class="o">.</span><span class="n">add_schema</span><span class="p">(</span><span class="n">maptype</span><span class="o">=</span><span class="s2">&quot;The Forbidden City&quot;</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">set_global_opts</span><span class="p">(</span>
+            <span class="n">title_opts</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">TitleOpts</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;The Forbidden City in Beijing&quot;</span><span class="p">),</span>
+        <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+</pre></div>
+
+
+<h3 id="_3">现在可以分享了</h3>
+<ol>
+<li>如果是 <code>render.html</code> 的话，你可以直接放在你的 github 项目里，就像这样: <a href="https://echarts-maps.github.io/The-Forbidden-City-Demo/render-zh.html">https://echarts-maps.github.io/The-Forbidden-City-Demo/render.html</a></li>
+<li>
+<p>如果是 jupyter notebook 的画，你可以通过 <a href="https://nbviewer.jupyter.org">https://nbviewer.jupyter.org</a> 分享。 看这个 <a href="https://nbviewer.jupyter.org/github/echarts-maps/The-Forbidden-City-Demo/blob/master/The-Forbidden-City-zh.ipynb">例子</a>.</p>
+<p><img alt="nbviewer" src="../../image/tutorial/nbviewer.png" /></p>
+</li>
+<li>
+<p>看这个渲染效果:</p>
+<p><img alt="nbviewer" src="../../image/tutorial/forbidden-city-nbviewer.png" /></p>
+</li>
+</ol>
+<p>请注意，在用 jupyter-notebook viewer 的时候，时间有延迟。比如我这链接，我等了 24 小时 才得到应该有的效果。</p>
+<h2 id="_4">其他的分享途径</h2>
+<ol>
+<li>发布到 npm 然后用 <a href="http://unpkg.com">unpkg.com</a> </li>
+<li>发在阿里云上</li>
+</ol></div>
         </div>
 
         <footer class="col-md-12">
