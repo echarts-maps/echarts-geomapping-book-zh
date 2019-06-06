@@ -158,20 +158,27 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#pyecharts">与 pyecharts 接轨</a></li>
+            <li><a href="#_1">准备工作</a></li>
             <li><a href="#js">生成以个 js 文件</a></li>
-            <li><a href="#_1">创建一个注册文件</a></li>
+            <li><a href="#_2">创建一个注册文件</a></li>
             <li><a href="#python">用 python 运行一个静态文件服务器</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="pyecharts">与 pyecharts 接轨</h1>
+<h2 id="_1">准备工作</h2>
+<p>首先你需要装 node.js 。你可以在<a href="https://nodejs.org/en/">官方网站</a>下载。我个人推荐用
+<a href="https://github.com/nvm-sh/nvm">nvm</a>，因为你可以轻松调换 node 的版本 。</p>
+<p>之后，你需要装 <a href="../../tools/mapmaker/">echarts-mapmaker</a></p>
 <h2 id="js">生成以个 js 文件</h2>
+<p><code>makejs</code> 是 <code>echarts-mapmaker</code> 的一个命令，它会把 geojson 做万国码编码，再写成
+js 版本。如果 geojson 是标准版的话，万国码编码之后的 js 文件会变小。</p>
 <div class="codehilite"><pre><span></span><span class="n">makejs</span> <span class="n">The</span><span class="o">-</span><span class="n">Forbidden</span><span class="o">-</span><span class="n">City</span><span class="o">-</span><span class="n">zh</span><span class="p">.</span><span class="n">geojson</span> <span class="n">The</span><span class="o">-</span><span class="n">Forbidden</span><span class="o">-</span><span class="n">City</span><span class="o">-</span><span class="n">zh</span><span class="p">.</span><span class="n">js</span> <span class="err">紫禁城</span>
 </pre></div>
 
 
-<h2 id="_1">创建一个注册文件</h2>
+<h2 id="_2">创建一个注册文件</h2>
 <div class="codehilite"><pre><span></span><span class="err">{</span>
     <span class="ss">&quot;GITHUB_URL&quot;</span><span class="p">:</span> <span class="ss">&quot;http://localhost:8000&quot;</span><span class="p">,</span>
     <span class="ss">&quot;JS_FOLDER&quot;</span><span class="p">:</span> <span class="ss">&quot;/&quot;</span><span class="p">,</span>
