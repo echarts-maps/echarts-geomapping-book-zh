@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>地理空间数据格式翻译家 (GDAL) - 给 Echarts 做地图</title>
+        <title>世界地图的视图中心点可以定制吗 - 给 Echarts 做地图</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -49,28 +49,28 @@
                             <li >
                                 <a href="../..">主页</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../geojson-io/">geojson 在线编辑器</a>
+    <a href="../../tools/geojson-io/">geojson 在线编辑器</a>
 </li>
                                     
 <li >
-    <a href="../mapshaper/">地图整形器（mapshaper）</a>
+    <a href="../../tools/mapshaper/">地图整形器（mapshaper）</a>
 </li>
                                     
 <li >
-    <a href="../mapmaker/">地图工匠（mapmaker）</a>
-</li>
-                                    
-<li class="active">
-    <a href="./">地理空间数据格式翻译家 (GDAL)</a>
+    <a href="../../tools/mapmaker/">地图工匠（mapmaker）</a>
 </li>
                                     
 <li >
-    <a href="../d3-cli/">沙皇的工具</a>
+    <a href="../../tools/gdal/">地理空间数据格式翻译家 (GDAL)</a>
+</li>
+                                    
+<li >
+    <a href="../../tools/d3-cli/">沙皇的工具</a>
 </li>
                                     
 <li >
@@ -132,12 +132,12 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">进阶 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../intermediate/change-world-center/">世界地图的视图中心点可以定制吗</a>
+<li class="active">
+    <a href="./">世界地图的视图中心点可以定制吗</a>
 </li>
                                 </ul>
                             </li>
@@ -150,17 +150,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../mapmaker/">
+                                <a rel="next" href="../../howtos/switzerland/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../d3-cli/">
+                            <li class="disabled">
+                                <a rel="prev" >
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/echarts-maps/echarts-geomapping-book-zh/edit/master/book/tools/gdal.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/echarts-maps/echarts-geomapping-book-zh/edit/master/book/intermediate/change-world-center.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -170,17 +170,52 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#gdal">GDAL</a></li>
-            <li><a href="#_1">安装</a></li>
+        <li class="main active"><a href="#_1">世界地图的视图中心点可以定制吗</a></li>
+            <li><a href="#_2">准备</a></li>
+            <li><a href="#_3">实际操作</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="gdal">GDAL</h1>
-<p><a href="https://gdal.org/">GADAL</a> 在地理地图数据格式处理方面有许多工具。ogrogr 是 echarts 常用的工具。</p>
-<h2 id="_1">安装</h2>
-<div class="codehilite"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">gdal</span>
-</pre></div></div>
+<h1 id="_1">世界地图的视图中心点可以定制吗</h1>
+<h2 id="_2">准备</h2>
+<p>首先，你需要装：</p>
+<ol>
+<li>node.js</li>
+<li><a href="../../tools/d3-cli/">d3-geo-projection</a></li>
+<li><a href="../../tools/mapmaker/">echarts-mapmaker</a></li>
+</ol>
+<p>这个是简要命令：</p>
+<div class="codehilite"><pre><span></span><span class="o">```</span><span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="k">g</span> <span class="n">d3</span><span class="o">-</span><span class="n">geo</span><span class="o">-</span><span class="n">projection</span> <span class="n">echarts</span><span class="o">-</span><span class="n">mapmaker</span><span class="o">```</span>
+</pre></div>
+
+
+<h2 id="_3">实际操作</h2>
+<ol>
+<li>世界地图可以在这里找到 <code>node_modules/echarts/map/json/world.json</code></li>
+<li>
+<p>先解码 world.json，得到标准的 geojson.</p>
+<p><code>decode world.json world.geojson</code></p>
+</li>
+<li>
+<p>开始先旋转一下</p>
+<p><code>geoproject 'd3.geoEcker3().rotate([-150,0,0])' &lt; world.geojson &gt; new-world.geojson</code></p>
+<p>我们看看形状，倒了。</p>
+<p><img alt="shifted world" src="../../image/world-center/shifted-world.png" /></p>
+</li>
+<li>
+<p>翻一个个，好了：加上 <code>geoproject 'd3.geoIdentity().reflectY(true)</code></p>
+<p><code>geoproject 'd3.geoEcker3().rotate([-150,0,0])' &lt; world.geojson | geoproject 'd3.geoIdentity().reflectY(true)' &gt; new-world.geojson</code></p>
+<p><img alt="almost finished world" src="../../image/world-center/need-stitch-world.png" /></p>
+<p>注意到没有，在红圈的地方，俄国联邦的车里雅宾斯克（Челябинск/Chelyabinsk) 有切割线。这就
+需要用到 <code>geostitch</code> 了。</p>
+</li>
+<li>
+<p>在运行 <code>geoproject</code> 之前，我们先把分隔的俄罗斯补起来。在做投影就可以了。</p>
+<p><code>geostitch world.geojson | geoproject 'd3.geoEcker3().rotate([-150,0,0])' | geoproject 'd3.geoIdentity().reflectY(true)' &gt; new-world.geojson</code></p>
+<p><img alt="to" src="../../image/world-center/eckert3-world.png" /></p>
+</li>
+</ol></div>
         </div>
 
         <footer class="col-md-12">

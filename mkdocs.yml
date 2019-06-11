@@ -10,6 +10,7 @@ nav:
     - 地图整形器（mapshaper）: tools/mapshaper.md
     - 地图工匠（mapmaker）: tools/mapmaker.md
     - 地理空间数据格式翻译家 (GDAL): tools/gdal.md
+    - 沙皇的工具: tools/d3-cli.md
     - 地图资源: geojson-sources.md
   - 起步教程:
     - 画紫禁城: tutorial/101.md
@@ -24,7 +25,8 @@ nav:
     - 给和田地区镶上昆玉市: howtos/encapsulated-shapes.md
     - 给天津市补上蓟洲区: howtos/add-ji-zhou-qu-to-tianjin.md
     - 瑞士在哪里？使用 natural earth 的地图: howtos/switzerland.md
-
+  - 进阶:
+    - 世界地图的视图中心点可以定制吗: intermediate/change-world-center.md
 
 docs_dir: book
 site_dir: docs

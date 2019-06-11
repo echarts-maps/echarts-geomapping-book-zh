@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>地理空间数据格式翻译家 (GDAL) - 给 Echarts 做地图</title>
+        <title>沙皇的工具 - 给 Echarts 做地图</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -65,12 +65,12 @@
     <a href="../mapmaker/">地图工匠（mapmaker）</a>
 </li>
                                     
-<li class="active">
-    <a href="./">地理空间数据格式翻译家 (GDAL)</a>
+<li >
+    <a href="../gdal/">地理空间数据格式翻译家 (GDAL)</a>
 </li>
                                     
-<li >
-    <a href="../d3-cli/">沙皇的工具</a>
+<li class="active">
+    <a href="./">沙皇的工具</a>
 </li>
                                     
 <li >
@@ -150,17 +150,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../mapmaker/">
+                                <a rel="next" href="../gdal/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../d3-cli/">
+                                <a rel="prev" href="../../geojson-sources/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/echarts-maps/echarts-geomapping-book-zh/edit/master/book/tools/gdal.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/echarts-maps/echarts-geomapping-book-zh/edit/master/book/tools/d3-cli.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -170,17 +170,40 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#gdal">GDAL</a></li>
-            <li><a href="#_1">安装</a></li>
+        <li class="main active"><a href="#_1">沙皇的工具</a></li>
+            <li><a href="#_2">简介</a></li>
+            <li><a href="#_3">安装</a></li>
+            <li><a href="#_4">主要功能</a></li>
+            <li><a href="#_5">参考</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="gdal">GDAL</h1>
-<p><a href="https://gdal.org/">GADAL</a> 在地理地图数据格式处理方面有许多工具。ogrogr 是 echarts 常用的工具。</p>
-<h2 id="_1">安装</h2>
-<div class="codehilite"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">gdal</span>
-</pre></div></div>
+<h1 id="_1">沙皇的工具</h1>
+<h2 id="_2">简介</h2>
+<p>说到数据可视化，就不能不谈到 Mike Bostock。他创作了最有名的 <a href="https://github.com/d3/d3">d3</a> 。
+他最新的创新就是 <a href="https://github.com/d3/d3-geo-projection/blob/master/README.md#d3-geo-projection">d3-geo</a> 的命令行。在 echarts 的地图编辑工作里，很多技术的问题需要他的工具。</p>
+<h2 id="_3">安装</h2>
+<ol>
+<li>首先，需要 node.js。我在其他章节里提到过如何安装 node.js，这里就省略了。</li>
+<li>
+<p>再需要就是用 <code>npm</code></p>
+<p><code>npm install -g d3-geo-projection</code></p>
+</li>
+</ol>
+<h2 id="_4">主要功能</h2>
+<h3 id="geoproject">geoproject</h3>
+<p><a href="https://github.com/d3/d3-geo-projection/blob/master/README.md#geoproject">geoproject</a>
+对 geojson 进行旋转，位移，和投影。</p>
+<p>比如把下面以以格林尼治为中心的世界地图：</p>
+<p><img alt="from" src="../../image/world-center/original-world.png" /></p>
+<p>转换成以太平洋为中心的世界地图：
+<img alt="to" src="../../image/world-center/eckert3-world.png" /></p>
+<h3 id="geostitch">geostitch</h3>
+<p><a href="https://github.com/d3/d3-geo-projection/blob/master/README.md#geostitch">geostitch</a>
+可以把”破“的地图补起来。在里，俄国联邦被切成了两部分。在投影之前，我们需要把俄国联邦给先补起来。</p>
+<h2 id="_5">参考</h2>
+<p><a href="https://medium.com/@mbostock/command-line-cartography-part-1-897aa8f8ca2c">Command-Line Cartography by Mike Bostock</a></p></div>
         </div>
 
         <footer class="col-md-12">
