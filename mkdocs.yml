@@ -20,9 +20,9 @@ nav:
     - 与他人分享紫禁城: tutorial/105.md
   - 实战:
     - 提取北京市的轮廓: howtos/dissolve-internal-borders.md
-    - 如何消除攀枝花市的内部边界: howtos/remove-an-internal-border.md
     - 县级地图是从哪里来的: howtos/split-geojson.md
     - 制作华北平原: howtos/split-and-merge.md
+    - 如何消除攀枝花市的内部边界: howtos/remove-an-internal-border.md
     - 给和田地区镶上昆玉市: howtos/encapsulated-shapes.md
     - 给天津市补上蓟洲区: howtos/add-ji-zhou-qu-to-tianjin.md
     - 瑞士在哪里？使用 natural earth 的地图: howtos/switzerland.md
