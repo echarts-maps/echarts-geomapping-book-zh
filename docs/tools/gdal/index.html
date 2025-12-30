@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_Hans_CN" data-bs-theme="light">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,162 +9,154 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
         <title>地理空间数据格式翻译家 (GDAL) - 地图工匠秘籍</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
     </head>
 
     <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-
-                <!-- Collapsed navigation -->
-                <div class="navbar-header">
-                    <!-- Expander button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="../..">地图工匠秘籍</a>
-                </div>
+                <a class="navbar-brand" href="../..">地图工匠秘籍</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
-                <div class="navbar-collapse collapse">
+                <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li >
-                                <a href="../..">主页</a>
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">主页</a>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具 <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">工具</a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../geojson-io/">geojson 在线编辑器</a>
+<li>
+    <a href="../geojson-io/" class="dropdown-item">geojson 在线编辑器</a>
 </li>
                                     
-<li >
-    <a href="../mapshaper/">地图整形器（mapshaper）</a>
+<li>
+    <a href="../mapshaper/" class="dropdown-item">地图整形器（mapshaper）</a>
 </li>
                                     
-<li >
-    <a href="../mapmaker/">地图工匠（mapmaker）</a>
+<li>
+    <a href="../mapmaker/" class="dropdown-item">地图工匠（mapmaker）</a>
 </li>
                                     
-<li class="active">
-    <a href="./">地理空间数据格式翻译家 (GDAL)</a>
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">地理空间数据格式翻译家 (GDAL)</a>
 </li>
                                     
-<li >
-    <a href="../d3-cli/">沙皇的工具</a>
+<li>
+    <a href="../d3-cli/" class="dropdown-item">沙皇的工具</a>
 </li>
                                     
-<li >
-    <a href="../../geojson-sources/">地图资源</a>
+<li>
+    <a href="../../geojson-sources/" class="dropdown-item">地图资源</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">起步教程 <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">起步教程</a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../tutorial/101/">画紫禁城</a>
+<li>
+    <a href="../../tutorial/101/" class="dropdown-item">画紫禁城</a>
 </li>
                                     
-<li >
-    <a href="../../tutorial/102/">与 pyecharts 接轨</a>
+<li>
+    <a href="../../tutorial/102/" class="dropdown-item">与 pyecharts 接轨</a>
 </li>
                                     
-<li >
-    <a href="../../tutorial/103/">用 pyecharts 渲染</a>
+<li>
+    <a href="../../tutorial/103/" class="dropdown-item">用 pyecharts 渲染</a>
 </li>
                                     
-<li >
-    <a href="../../tutorial/104/">在 jupyter notebook 展示紫禁城</a>
+<li>
+    <a href="../../tutorial/104/" class="dropdown-item">在 jupyter notebook 展示紫禁城</a>
 </li>
                                     
-<li >
-    <a href="../../tutorial/105/">与他人分享紫禁城</a>
+<li>
+    <a href="../../tutorial/105/" class="dropdown-item">与他人分享紫禁城</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">实战 <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">实战</a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../howtos/dissolve-internal-borders/">提取北京市的轮廓</a>
+<li>
+    <a href="../../howtos/dissolve-internal-borders/" class="dropdown-item">提取北京市的轮廓</a>
 </li>
                                     
-<li >
-    <a href="../../howtos/split-geojson/">县级地图是从哪里来的</a>
+<li>
+    <a href="../../howtos/split-geojson/" class="dropdown-item">县级地图是从哪里来的</a>
 </li>
                                     
-<li >
-    <a href="../../howtos/split-and-merge/">制作华北平原</a>
+<li>
+    <a href="../../howtos/split-and-merge/" class="dropdown-item">制作华北平原</a>
 </li>
                                     
-<li >
-    <a href="../../howtos/remove-an-internal-border/">如何消除攀枝花市的内部边界</a>
+<li>
+    <a href="../../howtos/remove-an-internal-border/" class="dropdown-item">如何消除攀枝花市的内部边界</a>
 </li>
                                     
-<li >
-    <a href="../../howtos/encapsulated-shapes/">给和田地区镶上昆玉市</a>
+<li>
+    <a href="../../howtos/encapsulated-shapes/" class="dropdown-item">给和田地区镶上昆玉市</a>
 </li>
                                     
-<li >
-    <a href="../../howtos/add-ji-zhou-qu-to-tianjin/">给天津市补上蓟洲区</a>
+<li>
+    <a href="../../howtos/add-ji-zhou-qu-to-tianjin/" class="dropdown-item">给天津市补上蓟洲区</a>
 </li>
                                     
-<li >
-    <a href="../../howtos/switzerland/">瑞士在哪里？使用 natural earth 的地图</a>
+<li>
+    <a href="../../howtos/switzerland/" class="dropdown-item">瑞士在哪里？使用 natural earth 的地图</a>
+</li>
+                                    
+<li>
+    <a href="../../howtos/taiwan/" class="dropdown-item">怎么没有台湾地图？使用台湾政府资料开放平台的地图</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">进阶 <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">进阶</a>
                                 <ul class="dropdown-menu">
                                     
-<li >
-    <a href="../../intermediate/change-world-center/">世界地图的视图中心点可以定制吗</a>
+<li>
+    <a href="../../intermediate/change-world-center/" class="dropdown-item">世界地图的视图中心点可以定制吗</a>
 </li>
                                 </ul>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> 搜索
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="../mapmaker/">
-                                    <i class="fa fa-arrow-left"></i> Previous
+                            <li class="nav-item">
+                                <a rel="prev" href="../mapmaker/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> 上一章
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../d3-cli/">
-                                    Next <i class="fa fa-arrow-right"></i>
+                            <li class="nav-item">
+                                <a rel="next" href="../d3-cli/" class="nav-link">
+                                    下一章 <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
-                            <li>
-                                <a href="https://github.com/echarts-maps/echarts-geomapping-book-zh/edit/master/book/tools/gdal.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                            <li class="nav-item">
+                                <a href="https://github.com/echarts-maps/echarts-geomapping-book-zh/edit/master/book/tools/gdal.md" class="nav-link"><i class="fa-brands fa-github"></i> 在GitHub上编辑</a>
                             </li>
                     </ul>
                 </div>
@@ -172,86 +164,102 @@
         </div>
 
         <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#gdal">GDAL</a></li>
-            <li><a href="#_1">安装</a></li>
-    </ul>
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="目录">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#gdal" class="nav-link">GDAL</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">安装</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
 </div></div>
-                <div class="col-md-9" role="main">
+                    <div class="col-md-9" role="main">
 
 <h1 id="gdal">GDAL</h1>
 <p><a href="https://gdal.org/">GADAL</a> 在地理地图数据格式处理方面有许多工具。ogrogr 是 echarts 常用的工具。</p>
 <h2 id="_1">安装</h2>
-<div class="codehilite"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">gdal</span>
-</pre></div></div>
+<div class="codehilite"><pre><span></span><code>brew install gdal
+</code></pre></div></div>
+            </div>
         </div>
 
         <footer class="col-md-12">
             <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>用<a href="https://www.mkdocs.org/">MkDocs</a>建立的文档。</p>
         </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
         <script>
             var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                <h4 class="modal-title" id="searchModalLabel">搜索</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
+                <p>从这里您可以搜索这些文档。在下面输入您需要搜索的内容。</p>
+                <form>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        <input type="search" class="form-control" placeholder="搜索..." id="mkdocs-search-query" title="在此输入搜索内容">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="没有搜索到结果"></div>
             </div>
             <div class="modal-footer">
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+                <h4 class="modal-title" id="keyboardModalLabel">键盘热键</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
             </div>
             <div class="modal-body">
               <table class="table">
                 <thead>
                   <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
+                    <th style="width: 20%;">键</th>
+                    <th>动作</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
+                    <td>打开这个帮助</td>
                   </tr>
                   <tr>
                     <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
+                    <td>下一页面</td>
                   </tr>
                   <tr>
                     <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
+                    <td>上一页面</td>
                   </tr>
                   <tr>
                     <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
+                    <td>搜索</td>
                   </tr>
                 </tbody>
               </table>
