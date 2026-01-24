@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh_Hans_CN" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>为什么是空地图？调节地图中心和放大 - 地图工匠秘籍</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">地图工匠秘籍</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">主页</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">工具</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tools/geojson-io/" class="dropdown-item">geojson 在线编辑器</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/mapshaper/" class="dropdown-item">地图整形器（mapshaper）</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/mapmaker/" class="dropdown-item">地图工匠（mapmaker）</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/gdal/" class="dropdown-item">地理空间数据格式翻译家 (GDAL)</a>
+</li>
+                                    
+<li>
+    <a href="../../tools/d3-cli/" class="dropdown-item">沙皇的工具</a>
+</li>
+                                    
+<li>
+    <a href="../../geojson-sources/" class="dropdown-item">地图资源</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">起步教程</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tutorial/101/" class="dropdown-item">画紫禁城</a>
+</li>
+                                    
+<li>
+    <a href="../../tutorial/102/" class="dropdown-item">与 pyecharts 接轨</a>
+</li>
+                                    
+<li>
+    <a href="../../tutorial/103/" class="dropdown-item">用 pyecharts 渲染</a>
+</li>
+                                    
+<li>
+    <a href="../../tutorial/104/" class="dropdown-item">在 jupyter notebook 展示紫禁城</a>
+</li>
+                                    
+<li>
+    <a href="../../tutorial/105/" class="dropdown-item">与他人分享紫禁城</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">实战</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../dissolve-internal-borders/" class="dropdown-item">提取北京市的轮廓</a>
+</li>
+                                    
+<li>
+    <a href="../split-geojson/" class="dropdown-item">县级地图是从哪里来的</a>
+</li>
+                                    
+<li>
+    <a href="../split-and-merge/" class="dropdown-item">制作华北平原</a>
+</li>
+                                    
+<li>
+    <a href="../remove-an-internal-border/" class="dropdown-item">如何消除攀枝花市的内部边界</a>
+</li>
+                                    
+<li>
+    <a href="../encapsulated-shapes/" class="dropdown-item">给和田地区镶上昆玉市</a>
+</li>
+                                    
+<li>
+    <a href="../add-ji-zhou-qu-to-tianjin/" class="dropdown-item">给天津市补上蓟洲区</a>
+</li>
+                                    
+<li>
+    <a href="../switzerland/" class="dropdown-item">瑞士在哪里？使用 natural earth 的地图</a>
+</li>
+                                    
+<li>
+    <a href="../taiwan/" class="dropdown-item">怎么没有台湾地图？使用台湾政府资料开放平台的地图</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">为什么是空地图？调节地图中心和放大</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">进阶</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../intermediate/change-world-center/" class="dropdown-item">世界地图的视图中心点可以定制吗</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> 搜索
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../taiwan/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> 上一章
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../intermediate/change-world-center/" class="nav-link">
+                                    下一章 <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/echarts-maps/echarts-geomapping-book-zh/edit/master/book/howtos/where-is-my-map.md" class="nav-link"><i class="fa-brands fa-github"></i> 在GitHub上编辑</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="目录">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#_1" class="nav-link">为什么是空地图？</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">为什么是空地图？</h1>
+<p>以斐济地图为例子，我们看到的地图是空的。</p>
+<p><img src="../../image/Fiji.png" alt="where is fiji" width="400"/></p>
+<p>那先看看地图是不是空的。我们先把js解压成geojson，</p>
+<div class="codehilite"><pre><span></span><code>decompress echarts-countries-js/Fiji.js Fiji.geojson
+</code></pre></div>
+
+<p>然后，打开geojson.io</p>
+<p><img src="../../image/geojson.png" alt="geojson.io" width="400"/></p>
+<p>上传Fiji.geojson，查看一下，</p>
+<p><img src="../../image/Fiji-geojson.png" alt="fiji" width="400"/></p>
+<p>地图上有斐济，那么是什么问题呢？试试用鼠标移动画布，能看到什么吗？</p>
+<p><img src="../../image/Fiji-2.png" alt="where is fiji" width="400"/></p>
+<p>能猜到吗？地图存在，是地图的中心问题。哪怎么办呢？先在gejson.io上找斐济的中心，</p>
+<p><img src="../../image/Fiji-3.png" alt="where is fiji" width="400"/></p>
+<p>然后，geojson.io会告诉你中心的坐标，</p>
+<p><img src="../../image/Fiji-4.png" alt="where is fiji" width="400"/></p>
+<p>再在 echarts 里用<strong>center</strong>参数。</p>
+<div class="codehilite"><pre><span></span><code>斐济: { center: [178.47489094528436, -17.82254817978705]}
+</code></pre></div>
+
+<p>最后，地图还是小？哪用<strong>zoom</strong>参数调大地图就好了。</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>用<a href="https://www.mkdocs.org/">MkDocs</a>建立的文档。</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">搜索</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
+            </div>
+            <div class="modal-body">
+                <p>从这里您可以搜索这些文档。在下面输入您需要搜索的内容。</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="搜索..." id="mkdocs-search-query" title="在此输入搜索内容">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="没有搜索到结果"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">键盘热键</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="关闭"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">键</th>
+                    <th>动作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>打开这个帮助</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>下一页面</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>上一页面</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>搜索</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
