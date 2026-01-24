@@ -27,6 +27,7 @@ nav:
     - 给天津市补上蓟洲区: howtos/add-ji-zhou-qu-to-tianjin.md
     - 瑞士在哪里？使用 natural earth 的地图: howtos/switzerland.md
     - 怎么没有台湾地图？使用台湾政府资料开放平台的地图: howtos/taiwan.md
+    - 为什么是空地图？调节地图中心和放大: howtos/where-is-my-map.md
   - 进阶:
     - 世界地图的视图中心点可以定制吗: intermediate/change-world-center.md
 
